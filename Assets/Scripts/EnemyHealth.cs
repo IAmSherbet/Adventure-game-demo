@@ -10,5 +10,6 @@ public class EnemyHealth : MonoBehaviour
     {
         hitPoints += energy;
         print(hitPoints);
+        //todo: do something when hitPoints reaches > 100
     }
 }

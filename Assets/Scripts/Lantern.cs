@@ -26,6 +26,7 @@ public class Lantern : MonoBehaviour
 
     private void PlayLanternFlash()
     {
+        //todo: create a flash when lantern is activated
         lanternFlash.Play();
     }
 

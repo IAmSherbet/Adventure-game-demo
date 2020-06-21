@@ -35,10 +35,10 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 0.501
+  m_ReflectionIntensity: 0.2
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.32125795, g: 0.35865423, b: 0.41733432, a: 0.501}
+  m_IndirectSpecularColor: {r: 0.20163494, g: 0.22714189, b: 0.26716593, a: 0.2}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -577,7 +577,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.4
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -4399,7 +4399,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22008
+  m_Name: pb_Mesh14920
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11682,13 +11682,19 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1171227154}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &1285465683 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6381483742199565382, guid: 8f148b1b11045461eb773b272fe38fb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2838842597943019752}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1289391013
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22082
+  m_Name: pb_Mesh15014
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11912,26 +11918,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 9e1e436209d124890bacaba73c3036c2, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e11ef4f39bc65e44a4b0755ecac6ea1, type: 3}
---- !u!1 &1500713178 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8968988228785083436, guid: 8f148b1b11045461eb773b272fe38fb3,
-    type: 3}
-  m_PrefabInstance: {fileID: 2838842597943019752}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1500713182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500713178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 958ad064e11894511a77a8a19e6bff02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCamera: {fileID: 1103785968}
-  range: 10
 --- !u!1001 &1538408249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12071,7 +12057,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22026
+  m_Name: pb_Mesh14940
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12961,7 +12947,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh21982
+  m_Name: pb_Mesh14894
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -13199,6 +13185,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 810968691059392025, guid: 8f148b1b11045461eb773b272fe38fb3,
+        type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1103785968}
+    - target: {fileID: 810968691059392025, guid: 8f148b1b11045461eb773b272fe38fb3,
+        type: 3}
+      propertyPath: lanternFlash
+      value: 
+      objectReference: {fileID: 1285465683}
     - target: {fileID: 1401587531918824647, guid: 8f148b1b11045461eb773b272fe38fb3,
         type: 3}
       propertyPath: m_LocalPosition.x
