@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    [SerializeField] Transform target;
+    [SerializeField] Transform targetToChase;
     [SerializeField] float chaseRange = 5f;
 
     NavMeshAgent navMeshAgent;
@@ -25,7 +25,7 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
-        distanceToTarget = Vector3.Distance(target.position, transform.position);
+        distanceToTarget = Vector3.Distance(targetToChase.position, transform.position);
 
         if (isProvoked)
         {
@@ -51,7 +51,7 @@ public class EnemyAI : MonoBehaviour
 
     private void ChaseTarget()
     {
-        navMeshAgent.SetDestination(target.position);
+        navMeshAgent.SetDestination(targetToChase.position);
     }
 
     private void AttackTarget()
