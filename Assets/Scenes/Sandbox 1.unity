@@ -13210,7 +13210,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 69780059, guid: 98b9b47a909f54c9c851b9282d4cdda7, type: 3}
       propertyPath: hitPoints
-      value: 1000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 652643068600179732, guid: 98b9b47a909f54c9c851b9282d4cdda7,
         type: 3}
