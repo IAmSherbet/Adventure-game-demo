@@ -11,7 +11,7 @@ public class EnemyHealth : MonoBehaviour
         hitPoints -= damage;
         print(hitPoints);
 
-        if (hitPoints <= 0)
+        if (hitPoints <= Mathf.Epsilon)
         {
             Destroy(gameObject);
         }
