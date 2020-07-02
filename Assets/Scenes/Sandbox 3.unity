@@ -10594,6 +10594,11 @@ PrefabInstance:
       propertyPath: parent
       value: 
       objectReference: {fileID: 1711572873}
+    - target: {fileID: 5717926126476352358, guid: a696eaf2ac9904154933bfe928366460,
+        type: 3}
+      propertyPath: parent
+      value: 
+      objectReference: {fileID: 1711572873}
     - target: {fileID: 8310203148372214792, guid: a696eaf2ac9904154933bfe928366460,
         type: 3}
       propertyPath: gameOverCanvas
