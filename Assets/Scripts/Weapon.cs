@@ -12,22 +12,16 @@ public class Weapon : MonoBehaviour
     [SerializeField] ParticleSystem muzzleFlashVFX;
     [SerializeField] GameObject hitVFX;
     [SerializeField] Transform parent;
-
-    Ammo ammo;
-
-    private void Start()
-    {
-        ammo = FindObjectOfType<Ammo>();
-    }
+    [SerializeField] Ammo ammoSlot;
 
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            if (ammo.GetCurrentAmmo() > 0)
+            if (ammoSlot.GetCurrentAmmo() > 0)
             {
                 Shoot();
-                ammo.ReduceAmmo();
+                ammoSlot.ReduceAmmo();
             }
         }
     }
