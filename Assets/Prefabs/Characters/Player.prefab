@@ -443,7 +443,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c0e7ef032e204a79b519fafd763afb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoAmount: 5
 --- !u!1 &4087261450626883825
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,6 +546,11 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 823670282091503507}
+    - target: {fileID: 8485658632941076087, guid: 3772713064e4347e3a0102863db160f9,
+        type: 3}
+      propertyPath: ammoSlot
+      value: 
+      objectReference: {fileID: 600964788}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3772713064e4347e3a0102863db160f9, type: 3}
 --- !u!4 &12240062846558208 stripped

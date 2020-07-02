@@ -10594,11 +10594,6 @@ PrefabInstance:
       propertyPath: parent
       value: 
       objectReference: {fileID: 1711572873}
-    - target: {fileID: 3092365446384873665, guid: a696eaf2ac9904154933bfe928366460,
-        type: 3}
-      propertyPath: ammoSlot
-      value: 
-      objectReference: {fileID: 600964779}
     - target: {fileID: 8310203148372214792, guid: a696eaf2ac9904154933bfe928366460,
         type: 3}
       propertyPath: gameOverCanvas
@@ -10606,18 +10601,6 @@ PrefabInstance:
       objectReference: {fileID: 2055968975}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a696eaf2ac9904154933bfe928366460, type: 3}
---- !u!114 &600964779 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 600964788, guid: a696eaf2ac9904154933bfe928366460,
-    type: 3}
-  m_PrefabInstance: {fileID: 600964778}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c0e7ef032e204a79b519fafd763afb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &604194210 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4620f3c93dca8c94c9124d8ba443f43e,
