@@ -13,11 +13,22 @@ public class Weapon : MonoBehaviour
     [SerializeField] GameObject hitVFX;
     [SerializeField] Transform parent;
 
+    Ammo ammo;
+
+    private void Start()
+    {
+        ammo = FindObjectOfType<Ammo>();
+    }
+
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Shoot();
+            if (ammo.GetCurrentAmmo() > 0)
+            {
+                Shoot();
+                ammo.ReduceAmmo();
+            }
         }
     }
 
