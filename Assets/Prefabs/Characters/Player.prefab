@@ -432,6 +432,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5923017937136143855}
+  - component: {fileID: 4648792116893262716}
   m_Layer: 0
   m_Name: Weapons
   m_TagString: Untagged
@@ -450,11 +451,24 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 12240062846558208}
   - {fileID: 469355594852657948}
+  - {fileID: 12240062846558208}
   m_Father: {fileID: 823670282089955729}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4648792116893262716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4087261450626883825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b230a3a38535a4217be9832923cb8ea5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeapon: 1
 --- !u!1001 &4507092703684652358
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -520,7 +534,7 @@ PrefabInstance:
     - target: {fileID: 4039469941305902682, guid: 8fdade120dd9647d885a46e9922763da,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4039469941305902682, guid: 8fdade120dd9647d885a46e9922763da,
         type: 3}
@@ -620,7 +634,7 @@ PrefabInstance:
     - target: {fileID: 6846078542986669750, guid: 3772713064e4347e3a0102863db160f9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6846078542986669750, guid: 3772713064e4347e3a0102863db160f9,
         type: 3}
