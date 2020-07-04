@@ -9,6 +9,7 @@ public class DeathHandler : MonoBehaviour
     void Start()
     {
         gameOverCanvas.enabled = false;
+        Time.timeScale = 1;
     }
 
     public void HandleDeath()
@@ -16,6 +17,7 @@ public class DeathHandler : MonoBehaviour
         gameOverCanvas.enabled = true;
 
         Time.timeScale = 0;
+        FindObjectOfType<WeaponSwitcher>().enabled = false;
         var firstPersonControllerCamera = GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>();
         var mouseLook = firstPersonControllerCamera.m_MouseLook;
 

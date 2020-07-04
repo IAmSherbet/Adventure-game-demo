@@ -10531,12 +10531,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9789486279062846, guid: a696eaf2ac9904154933bfe928366460, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 470919537318519850, guid: a696eaf2ac9904154933bfe928366460,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 823670282089864627, guid: a696eaf2ac9904154933bfe928366460,
         type: 3}
