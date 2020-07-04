@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ammo : MonoBehaviour
 {
-    private int ammoAmount = 5;
+    private int ammoAmount = 200;
 
     public int GetCurrentAmmo()
     {

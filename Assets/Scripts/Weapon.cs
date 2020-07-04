@@ -8,28 +8,39 @@ public class Weapon : MonoBehaviour
     [SerializeField] Camera playerCamera;
     [SerializeField] float range = 10f;
     [SerializeField] float damage = 25f;
+    private float timeBetweenShots = 0.1f;
 
     [SerializeField] ParticleSystem muzzleFlashVFX;
     [SerializeField] GameObject hitVFX;
     [SerializeField] Transform parent;
     [SerializeField] Ammo ammoSlot;
 
+    private int counter = 0;
+
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
             if (ammoSlot.GetCurrentAmmo() > 0)
             {
-                Shoot();
-                ammoSlot.ReduceAmmo();
+                StartCoroutine("MachineGunShoot", timeBetweenShots);
             }
         }
     }
 
-    private void Shoot()
+    IEnumerator MachineGunShoot(float timeBetweenShots)
     {
+        yield return new WaitForSeconds(timeBetweenShots);
+
+        counter++;
+        print("Shots fired: " + counter);
+
         PlayMuzzleFlash();
         ProcessRaycast();
+        ammoSlot.ReduceAmmo();
+
+        StopCoroutine("MachineGunShoot");
+
     }
 
     private void PlayMuzzleFlash()
@@ -44,8 +55,11 @@ public class Weapon : MonoBehaviour
         if (rayCast)
         {
             CreateHitEffect(hit);
+
             EnemyHealth enemyHealth = hit.transform.GetComponent<EnemyHealth>();
+
             if (enemyHealth == null) { return; }
+
             enemyHealth.TakeDamage(damage);
         }
         else

@@ -337,6 +337,7 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   range: 15
   damage: 25
+  timeBetweenShots: 2
   muzzleFlashVFX: {fileID: 3948810172952499560}
   hitVFX: {fileID: 8740074592403897789, guid: 6eac8b6c93ee745518399e1cd6a90a2f, type: 3}
   parent: {fileID: 0}
