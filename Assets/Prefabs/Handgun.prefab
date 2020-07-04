@@ -171,6 +171,7 @@ GameObject:
   - component: {fileID: 4068248891900977648}
   - component: {fileID: 4058687673601915382}
   - component: {fileID: 8202831093631333920}
+  - component: {fileID: 542512360678854878}
   m_Layer: 0
   m_Name: Handgun
   m_TagString: Untagged
@@ -261,6 +262,26 @@ MonoBehaviour:
   hitVFX: {fileID: 8740074592403897789, guid: 6eac8b6c93ee745518399e1cd6a90a2f, type: 3}
   parent: {fileID: 0}
   ammoSlot: {fileID: 600964788, guid: a696eaf2ac9904154933bfe928366460, type: 3}
+--- !u!114 &542512360678854878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4036740658617747820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cc53ebd5ac8c48f0bd34e7f2f3ef890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fpsCamera: {fileID: 0}
+  fpsController: {fileID: 0}
+  zoomedOutFOV: 60
+  zoomedInFOV: 30
+  zoomedOutXSensitivity: 5
+  zoomedOutYSensitivity: 5
+  zoomedInXSensitivity: 2
+  zoomedInYSensitivity: 2
 --- !u!1 &4036769521424581670
 GameObject:
   m_ObjectHideFlags: 0

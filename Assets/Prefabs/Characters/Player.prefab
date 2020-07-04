@@ -108,7 +108,6 @@ GameObject:
   - component: {fileID: 823670282098017363}
   - component: {fileID: 1370020204327970136}
   - component: {fileID: 8310203148372214792}
-  - component: {fileID: 600964780}
   - component: {fileID: 600964788}
   m_Layer: 0
   m_Name: Player
@@ -412,25 +411,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 0}
---- !u!114 &600964780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 823670282089864627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cc53ebd5ac8c48f0bd34e7f2f3ef890, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fpsCamera: {fileID: 823670282091503507}
-  zoomedOutFOV: 60
-  zoomedInFOV: 30
-  zoomedOutXSensitivity: 5
-  zoomedOutYSensitivity: 5
-  zoomedInXSensitivity: 2
-  zoomedInYSensitivity: 2
 --- !u!114 &600964788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -482,10 +462,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5923017937136143855}
     m_Modifications:
+    - target: {fileID: 542512360678854878, guid: 8fdade120dd9647d885a46e9922763da,
+        type: 3}
+      propertyPath: fpsCamera
+      value: 
+      objectReference: {fileID: 823670282091503507}
+    - target: {fileID: 542512360678854878, guid: 8fdade120dd9647d885a46e9922763da,
+        type: 3}
+      propertyPath: fpsController
+      value: 
+      objectReference: {fileID: 823670282101155923}
     - target: {fileID: 4036740658617747820, guid: 8fdade120dd9647d885a46e9922763da,
         type: 3}
       propertyPath: m_Name
       value: Handgun
+      objectReference: {fileID: 0}
+    - target: {fileID: 4036740658617747820, guid: 8fdade120dd9647d885a46e9922763da,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4039469941305902682, guid: 8fdade120dd9647d885a46e9922763da,
         type: 3}
@@ -630,8 +625,18 @@ PrefabInstance:
     - target: {fileID: 6848729357337885576, guid: 3772713064e4347e3a0102863db160f9,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8164798995547227369, guid: 3772713064e4347e3a0102863db160f9,
+        type: 3}
+      propertyPath: fpsCamera
+      value: 
+      objectReference: {fileID: 823670282091503507}
+    - target: {fileID: 8164798995547227369, guid: 3772713064e4347e3a0102863db160f9,
+        type: 3}
+      propertyPath: fpsController
+      value: 
+      objectReference: {fileID: 823670282101155923}
     - target: {fileID: 8485658632941076087, guid: 3772713064e4347e3a0102863db160f9,
         type: 3}
       propertyPath: playerCamera
