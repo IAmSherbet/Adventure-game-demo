@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public class Rifle : MonoBehaviour
 {
     [SerializeField] Camera playerCamera;
-    [SerializeField] float range = 10f;
+    [SerializeField] float range = 100f;
     [SerializeField] float damage = 25f;
     private float timeBetweenShots = 0.1f;
 
@@ -15,31 +14,26 @@ public class Weapon : MonoBehaviour
     [SerializeField] Transform parent;
     [SerializeField] Ammo ammoSlot;
 
-    private int counter = 0;
-
     void Update()
     {
         if (Input.GetButton("Fire1"))
         {
             if (ammoSlot.GetCurrentAmmo() > 0)
             {
-                StartCoroutine("MachineGunShoot", timeBetweenShots);
+                StartCoroutine("Shoot", timeBetweenShots);
             }
         }
     }
 
-    IEnumerator MachineGunShoot(float timeBetweenShots)
+    IEnumerator Shoot()
     {
         yield return new WaitForSeconds(timeBetweenShots);
-
-        counter++;
-        print("Shots fired: " + counter);
 
         PlayMuzzleFlash();
         ProcessRaycast();
         ammoSlot.ReduceAmmo();
 
-        StopCoroutine("MachineGunShoot");
+        StopCoroutine("Shoot");
 
     }
 

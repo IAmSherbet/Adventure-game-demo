@@ -248,8 +248,8 @@ GameObject:
   - component: {fileID: 6846078542986669750}
   - component: {fileID: 6878412398341714968}
   - component: {fileID: 6872293620812525894}
-  - component: {fileID: 8485658632941076087}
   - component: {fileID: 8164798995547227369}
+  - component: {fileID: 5608684030027566092}
   m_Layer: 0
   m_Name: Assault_Rifle
   m_TagString: Untagged
@@ -322,26 +322,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &8485658632941076087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6848729357337885576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 923e086338eb64b06803e05914e00138, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCamera: {fileID: 0}
-  range: 15
-  damage: 25
-  timeBetweenShots: 2
-  muzzleFlashVFX: {fileID: 3948810172952499560}
-  hitVFX: {fileID: 8740074592403897789, guid: 6eac8b6c93ee745518399e1cd6a90a2f, type: 3}
-  parent: {fileID: 0}
-  ammoSlot: {fileID: 0}
 --- !u!114 &8164798995547227369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,6 +342,25 @@ MonoBehaviour:
   zoomedOutYSensitivity: 5
   zoomedInXSensitivity: 2
   zoomedInYSensitivity: 2
+--- !u!114 &5608684030027566092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6848729357337885576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c952cde841bdd457c93063e0df745e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 0}
+  range: 10
+  damage: 25
+  muzzleFlashVFX: {fileID: 3948810172952499560}
+  hitVFX: {fileID: 8740074592403897789, guid: 6eac8b6c93ee745518399e1cd6a90a2f, type: 3}
+  parent: {fileID: 0}
+  ammoSlot: {fileID: 600964788, guid: a696eaf2ac9904154933bfe928366460, type: 3}
 --- !u!1001 &4060797762504903673
 PrefabInstance:
   m_ObjectHideFlags: 0
