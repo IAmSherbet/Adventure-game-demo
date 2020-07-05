@@ -13,12 +13,13 @@ public class Handgun : MonoBehaviour
     [SerializeField] GameObject hitVFX;
     [SerializeField] Transform parent;
     [SerializeField] Ammo ammoSlot;
+    [SerializeField] AmmoType ammoType;
 
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            if (ammoSlot.GetCurrentAmmo() > 0)
+            if (ammoSlot.GetCurrentAmmo(ammoType) > 0)
             {
                 Shoot();
             }
@@ -29,7 +30,7 @@ public class Handgun : MonoBehaviour
     {
         PlayMuzzleFlash();
         ProcessRaycast();
-        ammoSlot.ReduceAmmo();
+        ammoSlot.ReduceAmmo(ammoType);
     }
 
     private void PlayMuzzleFlash()
