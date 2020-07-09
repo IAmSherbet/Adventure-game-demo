@@ -43,7 +43,7 @@ public class EnemyDeath : MonoBehaviour
         }
     }
 
-    public void ActivateRagdoll()
+    public void ActivateRagdoll(RaycastHit hit)
     {
         rigidBody.velocity = Vector3.zero;
         rigidBody.angularVelocity = Vector3.zero;
@@ -60,9 +60,11 @@ public class EnemyDeath : MonoBehaviour
                 c.isTrigger = false;
                 c.attachedRigidbody.velocity = Vector3.zero;
                 c.attachedRigidbody.angularVelocity = Vector3.zero;
-                c.attachedRigidbody.AddForce(Vector3.back * dyingBlowForce);
+                c.attachedRigidbody.AddForce(hit.normal * dyingBlowForce * -1);
             }
         }
+
+        Destroy(rigidBody);
 
         enemyAI.enabled = false;
         navMeshAgent.enabled = false;

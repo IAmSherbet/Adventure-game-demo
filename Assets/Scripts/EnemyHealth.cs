@@ -6,7 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private float hitPoints = 100f;
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, RaycastHit hit)
     {
         BroadcastMessage("OnDamageTaken");
         hitPoints -= damage;
@@ -15,7 +15,7 @@ public class EnemyHealth : MonoBehaviour
         if (hitPoints <= Mathf.Epsilon)
         {
             //Destroy(gameObject);
-            BroadcastMessage("ActivateRagdoll");
+            GetComponent<EnemyDeath>().ActivateRagdoll(hit);
         }
     }
 }

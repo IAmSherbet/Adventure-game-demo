@@ -50,7 +50,7 @@ public class Handgun : MonoBehaviour
 
             if (enemyHealth == null) { return; }
 
-            enemyHealth.TakeDamage(damage);
+            enemyHealth.TakeDamage(damage, hit);
         }
         else
         {
