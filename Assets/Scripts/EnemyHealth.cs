@@ -14,7 +14,8 @@ public class EnemyHealth : MonoBehaviour
 
         if (hitPoints <= Mathf.Epsilon)
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            BroadcastMessage("ActivateRagdoll");
         }
     }
 }
