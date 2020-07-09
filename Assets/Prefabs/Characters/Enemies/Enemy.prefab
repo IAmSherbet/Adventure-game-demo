@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3015312361639372021}
   - component: {fileID: 74874333}
   - component: {fileID: 1810833121762793921}
+  - component: {fileID: 8709047013103865563}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -87,10 +88,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chaseRange: 20
   turnSpeed: 10
-  explosionForce: 10
-  explosionRadius: 10
+  dyingBlowForce: 1000
   ragdollParts: []
   rigidBody: {fileID: 1810833121762793921}
+  speed: 0
+  angularSpeed: 0
 --- !u!114 &69780059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,3 +154,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8709047013103865563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652643068600179732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a238e0cb321274b3eaf0229a61681532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
