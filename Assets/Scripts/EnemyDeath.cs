@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering;
 
 public class EnemyDeath : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class EnemyDeath : MonoBehaviour
     public Rigidbody rigidBody;
     public EnemyAI enemyAI;
     public NavMeshAgent navMeshAgent;
-    public List<Collider> ragdollParts = new List<Collider>();
+    public List<Collider> ragdollColliders = new List<Collider>();
 
     private void Awake()
     {
@@ -24,21 +25,16 @@ public class EnemyDeath : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
-    private void Update()
-    {
-        
-    }
-
     private void SetRagdollParts()
     {
-        Collider[] colliders = gameObject.GetComponentsInChildren<Collider>();
+        Collider[] colliders = GetComponentsInChildren<Collider>();
 
         foreach (Collider c in colliders)
         {
             if (c.gameObject != gameObject)
             {
-                c.isTrigger = true;
-                ragdollParts.Add(c);
+                c.enabled = false;
+                ragdollColliders.Add(c);
             }
         }
     }
@@ -46,25 +42,23 @@ public class EnemyDeath : MonoBehaviour
     public void ActivateRagdoll(RaycastHit hit)
     {
         rigidBody.velocity = Vector3.zero;
-        rigidBody.angularVelocity = Vector3.zero;
         rigidBody.useGravity = false;
 
         gameObject.GetComponent<CapsuleCollider>().enabled = false;
         gameObject.GetComponent<Animator>().enabled = false;
         gameObject.GetComponent<Animator>().avatar = null;
 
-        foreach (Collider c in ragdollParts)
+        foreach (Collider c in ragdollColliders)
         {
             if (c.gameObject != gameObject)
             {
-                c.isTrigger = false;
+                c.enabled = true;
                 c.attachedRigidbody.velocity = Vector3.zero;
-                c.attachedRigidbody.angularVelocity = Vector3.zero;
-                c.attachedRigidbody.AddForce(hit.normal * dyingBlowForce * -1);
+                c.attachedRigidbody.AddExplosionForce(dyingBlowForce, hit.point, -1f);
             }
         }
 
-        Destroy(rigidBody);
+        //Destroy(rigidBody);
 
         enemyAI.enabled = false;
         navMeshAgent.enabled = false;
