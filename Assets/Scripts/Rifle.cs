@@ -12,17 +12,12 @@ public class Rifle : MonoBehaviour
     [SerializeField] ParticleSystem muzzleFlashVFX;
     [SerializeField] GameObject hitVFX;
     [SerializeField] Transform parent;
-    [SerializeField] Ammo ammoSlot;
-    [SerializeField] AmmoType ammoType;
 
     void Update()
     {
         if (Input.GetButton("Fire1"))
         {
-            if (ammoSlot.GetCurrentAmmo(ammoType) > 0)
-            {
-                StartCoroutine("Shoot", timeBetweenShots);
-            }
+            StartCoroutine("Shoot", timeBetweenShots);
         }
     }
 
@@ -32,7 +27,6 @@ public class Rifle : MonoBehaviour
 
         PlayMuzzleFlash();
         ProcessRaycast();
-        ammoSlot.ReduceAmmo(ammoType);
 
         StopCoroutine("Shoot");
 

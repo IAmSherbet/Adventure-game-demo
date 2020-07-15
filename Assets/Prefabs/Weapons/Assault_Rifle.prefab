@@ -256,7 +256,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6846078542986669750
 Transform:
   m_ObjectHideFlags: 0
@@ -329,7 +329,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6848729357337885576}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cc53ebd5ac8c48f0bd34e7f2f3ef890, type: 3}
   m_Name: 
@@ -360,7 +360,7 @@ MonoBehaviour:
   muzzleFlashVFX: {fileID: 3948810172952499560}
   hitVFX: {fileID: 8740074592403897789, guid: 6eac8b6c93ee745518399e1cd6a90a2f, type: 3}
   parent: {fileID: 0}
-  ammoSlot: {fileID: 600964788, guid: a696eaf2ac9904154933bfe928366460, type: 3}
+  ammoSlot: {fileID: 0}
   ammoType: 1
 --- !u!1001 &4060797762504903673
 PrefabInstance:
