@@ -358,6 +358,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 13770374, guid: ce898fdcb7684734b8b25310bcb1600e, type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 13770374, guid: ce898fdcb7684734b8b25310bcb1600e, type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 13770374, guid: ce898fdcb7684734b8b25310bcb1600e, type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 312414082848629287, guid: ce898fdcb7684734b8b25310bcb1600e,
         type: 3}
       propertyPath: m_Drag
