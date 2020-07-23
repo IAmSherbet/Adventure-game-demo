@@ -277,12 +277,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 0}
   range: 50
-  damage: 17
+  damage: 100
   muzzleFlashVFX: {fileID: 1745086764064101115}
   hitVFX: {fileID: 8740074592403897789, guid: 6eac8b6c93ee745518399e1cd6a90a2f, type: 3}
   parent: {fileID: 0}
-  ammoSlot: {fileID: 600964788, guid: a696eaf2ac9904154933bfe928366460, type: 3}
-  ammoType: 0
 --- !u!1 &4036769521424581670
 GameObject:
   m_ObjectHideFlags: 0
