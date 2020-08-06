@@ -6,48 +6,70 @@ public class Flashlight : MonoBehaviour
 {
     [SerializeField] float lightStartIntensity = 4f;
     [SerializeField] float lightStartAngle = 80f;
+    [SerializeField] float lightLifetime = 30f;
 
-    [SerializeField] float lightDecay = 0.1f;
-    [SerializeField] float angleDecay = 1f;
+    float maximumBattery = 100f;
+    float timeBetweenDecay = 1f;
 
-    [SerializeField] float minimumAngle = 40f;
-    [SerializeField] float lightLifetime = 60f;
-    float timeBetweenDecay;
+    bool lightOn;
+
+    float batteryDecay;
+    float batteryLevel;
     Light myLight;
 
-    // Start is called before the first frame update
     void Start()
     {
-        timeBetweenDecay = lightLifetime / (lightStartIntensity / lightDecay);
+        batteryDecay = maximumBattery / lightLifetime;
+        batteryLevel = maximumBattery;
 
         myLight = GetComponent<Light>();
+
         myLight.intensity = lightStartIntensity;
         myLight.spotAngle = lightStartAngle;
+
+        myLight.enabled = false;
+        lightOn = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // if light is ON
-        //StartCoroutine(DecreaseLightAngle());
-        StartCoroutine(DecreaseLightIntensity());
-        //DecreaseLightIntensity();
+        ProcessKeyInput();
 
-        // else do nothing
-    }
-
-    IEnumerator DecreaseLightAngle()
-    {
-        if (myLight.spotAngle >= minimumAngle)
+        if (lightOn && batteryLevel > Mathf.Epsilon)
         {
-            myLight.spotAngle -= angleDecay;
-            yield return new WaitForSeconds(timeBetweenDecay);
+            StartCoroutine(DecreaseBatteryLife());
+        }
+        else
+        {
+            StopCoroutine(DecreaseBatteryLife());
+            myLight.enabled = false;
         }
     }
 
-    IEnumerator DecreaseLightIntensity()
+    void ProcessKeyInput()
     {
-        myLight.intensity -= lightDecay;
-        yield return new WaitForSeconds(10f);
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            ToggleFlashlight();
+        }
+    }
+
+    void ToggleFlashlight()
+    {
+        lightOn = !lightOn;
+
+        if (batteryLevel <= Mathf.Epsilon)
+        {
+            myLight.enabled = false;
+        } else {
+            myLight.enabled = !myLight.enabled;
+        }
+    }
+
+    IEnumerator DecreaseBatteryLife()
+    {
+        batteryLevel -= batteryDecay * Time.deltaTime;
+        print(batteryLevel);
+        yield return new WaitForSeconds(timeBetweenDecay);
     }
 }
