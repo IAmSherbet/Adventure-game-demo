@@ -7,8 +7,9 @@ public class Flashlight : MonoBehaviour
     [SerializeField] float lightStartIntensity = 4f;
     [SerializeField] float lightStartAngle = 80f;
     [SerializeField] float lightLifetime = 30f;
+    [SerializeField] int storedBatteries = 0;
 
-    float maximumBattery = 100f;
+    public float maximumBattery = 100f;
     float timeBetweenDecay = 1f;
 
     bool lightOn;
@@ -39,11 +40,24 @@ public class Flashlight : MonoBehaviour
         {
             StartCoroutine(DecreaseBatteryLife());
         }
+        else if (lightOn && batteryLevel <= Mathf.Epsilon && storedBatteries > 0)
+        {
+            StopCoroutine(DecreaseBatteryLife());
+
+            storedBatteries--;
+
+            batteryLevel = maximumBattery;
+        }
         else
         {
             StopCoroutine(DecreaseBatteryLife());
             myLight.enabled = false;
         }
+    }
+
+    public void AddStoredBattery()
+    {
+        storedBatteries++;
     }
 
     void ProcessKeyInput()
