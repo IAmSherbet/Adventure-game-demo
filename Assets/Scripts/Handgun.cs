@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Handgun : MonoBehaviour
@@ -15,8 +16,12 @@ public class Handgun : MonoBehaviour
     [SerializeField] Ammo ammoSlot;
     [SerializeField] AmmoType ammoType;
 
+    [SerializeField] TextMeshProUGUI ammoText;
+
     void Update()
     {
+        DisplayAmmo();
+
         if (Input.GetButtonDown("Fire1"))
         {
             if (ammoSlot.GetCurrentAmmo(ammoType) > 0)
@@ -24,6 +29,12 @@ public class Handgun : MonoBehaviour
                 Shoot();
             }
         }
+    }
+
+    private void DisplayAmmo()
+    {
+        var currentAmmo = ammoSlot.GetCurrentAmmo(ammoType);
+        ammoText.text = "Handgun: " + currentAmmo.ToString();
     }
 
     private void Shoot()
